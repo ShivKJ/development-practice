@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='development',
     version='0.1',
-    packages=['development'],
+    packages=['development', 'development.math'],
     url='https://github.com/ShivKJ/development-practice',
     license='',
     author='Shiv',

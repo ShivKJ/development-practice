@@ -26,3 +26,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 """
+from math import radians, sin, sqrt
+
+
+def area_sides(a, b, c):
+    s = (a + b + c) / 2
+
+    return sqrt(s * (s - a) * (s - b) * (s - c))
+
+
+def area_ab_angle(a, b, theta, in_degree=True):
+    if in_degree:
+        theta = radians(theta)
+
+    return a * b * sin(theta) / 2
