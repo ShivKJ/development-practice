@@ -29,11 +29,22 @@ SOFTWARE.
 
 
 def fib1(n):
+    """
+
+    :param n:
+    :return: nth fibonacci number using brute force
+    """
     if n <= 1: return n
     return fib1(n - 1) + fib1(n - 2)
 
 
 def fib2(n, cache=None):
+    """
+    finds nth fibonacci number using memoized method (DP)
+    :param n:
+    :param cache:
+    :return:
+    """
     if cache is None:
         cache = [-1] * (n + 1)
         cache[0], cache[1] = 0, 1
@@ -47,6 +58,11 @@ def fib2(n, cache=None):
 
 
 def fib3(n):
+    """
+    finds nth fibonacci number using iterative method
+    :param n:
+    :return:
+    """
     if n <= 1: return n
 
     a, b = 0, 1

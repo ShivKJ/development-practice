@@ -30,12 +30,28 @@ from math import radians, sin, sqrt
 
 
 def area_sides(a, b, c):
+    """
+    finds area of triangle with sides a, b and c using Heron's Formula
+    https://en.wikipedia.org/wiki/Heron%27s_formula#Formulation
+    :param a:
+    :param b:
+    :param c:
+    :return: area
+    """
     s = (a + b + c) / 2
 
     return sqrt(s * (s - a) * (s - b) * (s - c))
 
 
 def area_ab_angle(a, b, theta, in_degree=True):
+    """
+    finds area of triangle with sides a and b and theta as angle between them
+    :param a:
+    :param b:
+    :param theta:
+    :param in_degree:
+    :return:
+    """
     if in_degree:
         theta = radians(theta)
 
