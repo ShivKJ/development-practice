@@ -1,7 +1,7 @@
 """
 author: Shiv
 email: shivkj001@gmail.com
-date: 4/26/20
+date: 4/27/20
 
 MIT License
 
@@ -26,50 +26,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 """
-
-
-def fib1(n):
-    """
-
-    :param n:
-    :return: nth fibonacci number using brute force
-    """
-    if n <= 1: return n
-    return fib1(n - 1) + fib1(n - 2)
-
-
-def fib2(n, cache=None):
-    """
-    finds nth fibonacci number using memoized method (DP)
-    :param n:
-    :param cache:
-    :return:
-    """
-    if n <= 1: return n
-
-    if cache is None:
-        cache = [-1] * (n + 1)
-        cache[0], cache[1] = 0, 1
-
-    if cache[n] != -1:
-        return cache[n]
-
-    cache[n] = fib2(n - 1, cache) + fib2(n - 2, cache)
-
-    return cache[n]
-
-
-def fib3(n):
-    """
-    finds nth fibonacci number using iterative method
-    :param n:
-    :return:
-    """
-    if n <= 1: return n
-
-    a, b = 0, 1
-
-    for _ in range(n - 1):
-        a, b = b, a + b
-
-    return b
